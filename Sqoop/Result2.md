@@ -1,6 +1,7 @@
 2.
 This time save the same in parquet format with snappy compression. Save it in /loudacre/accounts/user_compressed. Provide.a screenshot of HUE with the new directory created.
 
+<pre><code>
 [training@localhost scripts]$ sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --table accounts --columns "acct_num,first_name,last_name" --target-dir /loudacre/accounts/user_compressed --fields-terminated-by "\t" --as-parquetfile --compression-codec \
 > org.apache.hadoop.io.compress.SnappyCodec
 19/04/07 22:35:23 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
@@ -78,3 +79,4 @@ Note: Recompile with -Xlint:deprecation for details.
 		Bytes Written=0
 19/04/07 22:36:08 INFO mapreduce.ImportJobBase: Transferred 1.2446 MB in 39.4323 seconds (32.3202 KB/sec)
 19/04/07 22:36:08 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
+</code></pre>

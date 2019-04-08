@@ -3,6 +3,7 @@
 3.
 Finally save in /loudacre/accounts/CA only clients whose state is from California. Save the file in avro format and compressed using snappy. From the terminal, display some of the records that you just imported. Take a screenshot and save it as CA_only.
 
+<pre><code>
 [training@localhost scripts]$ sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --table accounts --columns "acct_num,first_name,last_name" --target-dir /loudacre/accounts/CA --fields-terminated-by "\t" --as-avrodatafile --compression-codec org.apache.hadoop.io.compress.SnappyCodec --where " state='CA'"
 19/04/07 23:31:49 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
 19/04/07 23:31:49 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
@@ -123,3 +124,4 @@ log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more in
 {"acct_num":{"int":37},"first_name":{"string":"Cheryl"},"last_name":{"string":"West"}}
 {"acct_num":{"int":38},"first_name":{"string":"Sabrina"},"last_name":{"string":"Macklin"}}
 {"acct_num":{"int":39},"first_name":{"string":"Leroy"},"last_name":{"string":"Sears"}}
+</code></pre>
