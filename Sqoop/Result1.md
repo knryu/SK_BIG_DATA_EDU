@@ -97,9 +97,7 @@ Note: Recompile with -Xlint:deprecation for details.
 		Bytes Written=2615920
 19/04/07 22:19:59 INFO mapreduce.ImportJobBase: Transferred 2.4947 MB in 31.6664 seconds (80.6724 KB/sec)
 19/04/07 22:19:59 INFO mapreduce.ImportJobBase: Retrieved 129761 records.
-</code></pre>
 
-<pre><code>
 [training@localhost scripts]$ hdfs dfs -ls /loudacre/accounts/user_info/
 Found 5 items
 -rw-rw-rw-   1 training supergroup          0 2019-04-07 22:19 /loudacre/accounts/user_info/_SUCCESS
