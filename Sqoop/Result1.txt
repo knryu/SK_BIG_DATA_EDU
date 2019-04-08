@@ -21,16 +21,7 @@ From the accounts table, import only the primary key, along with the first name,
 | created              | datetime             | NO  |     | (null)               |                      |
 | modified             | datetime             | NO  |     | (null)               |                      |
 ---------------------------------------------------------------------------------------------------------
-[training@localhost scripts]$ sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --table accounts --columns "accnt_num,first_name,last_name" --target-dir /loudacre/accounts/user_info --fields-terminated-by "\t" --as-textfile
-19/04/07 22:18:25 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
-19/04/07 22:18:25 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
-19/04/07 22:18:25 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
-19/04/07 22:18:25 INFO tool.CodeGenTool: Beginning code generation
-19/04/07 22:18:26 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `accounts` AS t LIMIT 1
-19/04/07 22:18:26 ERROR util.SqlTypeMap: It seems like you are looking up a column that does not
-19/04/07 22:18:26 ERROR util.SqlTypeMap: exist in the table. Please ensure that you've specified
-19/04/07 22:18:26 ERROR util.SqlTypeMap: correct column names in Sqoop options.
-19/04/07 22:18:26 ERROR tool.ImportTool: Imported Failed: column not found: accnt_num
+
 [training@localhost scripts]$ sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --table accounts --columns "acct_num,first_name,last_name" --target-dir /loudacre/accounts/user_info --fields-terminated-by "\t" --as-textfile
 19/04/07 22:19:23 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.7.0
 19/04/07 22:19:23 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
