@@ -67,7 +67,7 @@ ORDER BY dat
 4.
 
 SELECT
-    rank() over (partition by year(AAA.DAT), month(AAA.DAT) order by AAA.profit)
+    rank() over (partition by year(AAA.DAT), month(AAA.DAT) order by AAA.profit desc)
     , AAA.DAT
 FROm (
 SELECt
