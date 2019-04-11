@@ -65,3 +65,22 @@ ORDER BY dat
 결과가 많아서 결과는 생략합니다.
 
 4.
+
+SELECT
+    rank() over (partition by year(AAA.DAT), month(AAA.DAT) order by AAA.profit)
+    , AAA.DAT
+FROm (
+SELECt
+  to_date(C.order_date) as DAT
+  , sum(A.price) as revenue
+  , sum(A.price) - sum(A.cost) as profit
+from
+  PRODUCTS A
+  JOIN  ORDER_DETAILS B
+  ON (A.prod_id = b.prod_id)
+  JOIN  ORDERS C
+  ON (B.ORDER_ID = C.ORDER_ID)
+WHERE
+  A.brand like 'Dualcore%'
+GROUP BY DAT
+) AS AAA;
