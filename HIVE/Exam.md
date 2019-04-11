@@ -45,9 +45,7 @@ limit 10;
 
 3.
 SELECt
-  A.prod_id
-  , A.brand
-  , A.name
+A.brand
   , to_date(C.order_date) as DAT
   , sum(A.price) as revenue
   , sum(A.price) - sum(A.cost) as profit
@@ -59,8 +57,8 @@ from
   ON (B.ORDER_ID = C.ORDER_ID)
 WHERE
   A.brand like 'Dualcore%'
-GROUP BY A.PROD_ID, A.BRAND, A.NAME, DAT
-ORDER BY A.name, dat
+GROUP BY A.BRAND,DAT
+ORDER BY dat
 ;
 
 =>
