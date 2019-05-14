@@ -1,23 +1,23 @@
 <code>
-# Stub code to copy into Spark Shell
+-- Stub code to copy into Spark Shell
 
 import xml.etree.ElementTree as ElementTree
 
-# Optional: Set logging level to WARN to reduce distracting info messages
+-- Optional: Set logging level to WARN to reduce distracting info messages
 sc.setLogLevel("WARN")  
 
-# Given a string containing XML, parse the string, and 
-# return an iterator of activation XML records (Elements) contained in the string
+-- Given a string containing XML, parse the string, and 
+-- return an iterator of activation XML records (Elements) contained in the string
 
 def getActivations(s):
     filetree = ElementTree.fromstring(s)
     return filetree.getiterator('activation')
     
-# Given an activation record (XML Element), return the model name
+-- Given an activation record (XML Element), return the model name
 def getModel(activation):
     return activation.find('model').text 
 
-# Given an activation record (XML Element), return the account number 
+-- Given an activation record (XML Element), return the account number 
 def getAccount(activation):
     return activation.find('account-number').text 
 </code>
